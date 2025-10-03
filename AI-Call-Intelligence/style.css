@@ -1,0 +1,258 @@
+/* Full-page animated gradient background */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+}
+
+.background {
+  background: linear-gradient(-45deg, #0078d7, #00c6ff, #0078d7, #00c6ff);
+  background-size: 400% 400%;
+  animation: gradientFlow 15s ease infinite;
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Gradient animation */
+@keyframes gradientFlow {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Top-right nav buttons */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.nav-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-btn {
+  background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Centered title and buttons near top */
+.center-content {
+  margin-top: 120px;
+  text-align: center;
+}
+
+.center-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.main-btn {
+  background-color: #ffffff;
+  border: none;
+  padding: 12px 24px;
+  color: #0078d7;
+  font-size: 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  font-weight: bold;
+}
+
+.main-btn:hover {
+  background-color: #e0e0e0;
+}
+
+
+.image-cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 10px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card p {
+  margin-top: 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Header layout with logo and nav buttons */
+/* Dropdown styling */
+.dropdown {
+  position: absolute;
+  top: 300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top-left-radius: 150px;
+  border-top-right-radius: 150px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 -4px 10px rgba(0,0,0,0.3);
+  backdrop-filter: blur(10px);
+  z-index: 10;
+}
+
+.meeting-option img {
+  width: 50px;
+  height: 50px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.meeting-option img:hover {
+  transform: scale(1.2);
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* Loader animation */
+.loader {
+  margin: 30px auto;
+  border: 8px solid rgba(255, 255, 255, 0.2);
+  border-top: 8px solid white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Notepad-style transcript box */
+.notepad {
+  background-color: white;
+  color: #333;
+  padding: 20px;
+  margin-top: 30px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  text-align: left;
+}
+
+.notepad h3 {
+  margin-bottom: 10px;
+  font-family: 'Courier New', monospace;
+}
+
+.notepad textarea {
+  width: 100%;
+  height: 200px;
+  border: none;
+  resize: none;
+  font-family: 'Courier New', monospace;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: #fdfdfd;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+
+/* Login box styling */
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 300px;
+  margin-top: 30px;
+}
+
+.login-box input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+}
+
+.login-box input::placeholder {
+  color: #666;
+}
+
+
+
+/* Hide default file input */
+.file-input {
+  display: none;
+}
+
+/* Custom file label styling */
+.file-label {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #333;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.file-label:hover {
+  background-color: #e0e0e0;
+}

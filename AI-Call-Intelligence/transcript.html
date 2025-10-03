@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Transcript Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="background">
+    <header>
+      <div class="logo"></div>
+      <div class="nav-buttons">
+        <button class="nav-btn" onclick="window.location.href='index.html'">HOME</button>
+      </div>
+    </header>
+
+    <main class="center-content">
+      <h1>Upload Your Audio File</h1>
+      <form id="uploadForm">
+        <label for="audioFile" class="file-label">Choose Audio File</label>
+<input type="file" id="audioFile" accept="audio/*" class="file-input" />
+<p id="fileName" style="color: white; font-weight: bold;"></p>
+
+
+        <button type="submit" class="main-btn">Let's Go</button>
+      </form>
+
+      <!-- Animated loader logo -->
+      <div id="loader" class="loader hidden"></div>
+
+      <!-- Transcript box -->
+      <div id="transcriptBox" class="notepad hidden">
+        <h3>Transcript Output</h3>
+        <textarea readonly></textarea>
+      </div>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
